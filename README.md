@@ -69,7 +69,7 @@ We use Github.
 
 ## Authors
 
-* *Bruno Ferreira** - *Initial work* - [brff86](https://github.com/brff86)
+* **Bruno Ferreira** - *Initial work* - [brff86](https://github.com/brff86)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
