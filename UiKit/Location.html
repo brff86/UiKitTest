@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PlugThings</title>
+        <meta charset="ISO-8859-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/uikit.min.css" />
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+            height: 226px;
+      }
+     
+    </style>
+    </head>
+    <body>
+        <div class="uk-offcanvas-content">
+
+            <!-- The whole page content goes here -->
+            
+            <!-- Navbar here -->
+            <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+            <nav class="uk-light uk-background-primary uk-navbar  uk-margin" uk-navbar>
+                <div class="uk-navbar-left">
+                    <div>
+                        <a class="uk-navbar-item uk-logo" href="#"><img data-src="../UiKit test/img/plugthings_logo.png" width="120" alt="" uk-img></a>
+                        
+                    </div>
+                </div>
+                <div class="uk-navbar-right">
+                <div>
+                       <ul class="uk-navbar-nav">
+                            <li>
+                                <a href="#"><img data-src="../UiKit test/img/Flags/Portugal.png" width="35" alt="" uk-img></a>
+                                <div class="uk-navbar-dropdown">
+                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                        <li class="uk-active"><a href="#">Portugês</a></li>
+                                        <li><a href="#">Inglês</a></li>
+                                        <li><a href="#">Espanhol</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul> 
+                   </div>
+                    <div>
+                     
+                       <a class="uk-navbar-toggle uk-navbar-toggle-icon uk-icon" href="#offcanvas-usage" uk-navbar-toggle-icon="" aria-expanded="false" uk-toggle><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect y="9" width="20" height="2"></rect><rect y="3" width="20" height="2"></rect><rect y="15" width="20" height="2"></rect></svg></a>
+                                
+                    </div>
+               </div>
+            </nav>
+            </div>
+            
+            <div class="uk-container uk-container-expand">
+                <h2 class="uk-heading-line uk-text-center"><span class="uk-text-primary"><span class="uk-margin-small-right" uk-icon="icon: location; ratio: 1.8"></span> Freiria</span></h2>
+            </div>
+            
+            <div class="uk-container uk-container-expand">
+                <div uk-grid="" class="uk-grid">
+                    <div class="uk-width-2-3@m uk-grid-margin uk-first-column">
+                        <div class="uk-panel">
+                            <div class="uk-card uk-card-default uk-card-body">
+                                <h3 class="uk-card-title uk-text-primary">Gráfico Termo Pluviometero</h3>
+                                <canvas id="myChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-3@m uk-grid-margin">
+                        <div class="uk-panel">
+                        <div class="uk-card uk-card-default uk-card-body">
+                                <h3 class="uk-card-title uk-text-primary">Mapa</h3>
+                                <div id="map" class="height:200px"></div>
+                                    <script>
+                                    function initMap() {
+                                        var myLatLng = {lat: 39.025, lng: -9.316};
+                                    
+                                        var map = new google.maps.Map(document.getElementById('map'), {
+                                        zoom: 12,
+                                        center: myLatLng
+                                      });
+
+                                      var marker = new google.maps.Marker({
+                                        position: myLatLng,
+                                        map: map,
+                                        title: 'Estação: Freiria'
+                                      });
+                                      
+                                      // Define the LatLng coordinates for the outer path.
+                                        var outerCoords = [
+                                          {lat: 39.024, lng: -9.315}, // north west
+                                          {lat: 39.025, lng: -9.315}, // south west
+                                          {lat: 39.025, lng: -9.316}, // south east
+                                          {lat: 39.024, lng: -9.316},  // north east
+                                          {lat: 39.025, lng: -9.314}  // north east
+                                        ];
+
+                                      
+                                       map.data.add({geometry: new google.maps.Data.Polygon([outerCoords])})
+                                      // Set the stroke width, and fill color for each polygon
+                                        map.data.setStyle({
+                                          fillColor: 'red',
+                                          strokeWeight: 1
+                                        });
+
+                                      }
+                                    </script>
+                                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdZQMNhY3uYBVl0pVi53wjs6CLv-ZWG3Q&callback=initMap"
+                                    async defer></script>
+                            </div>
+                             <div class="uk-margin uk-card uk-card-default uk-card-body">
+                                <h3 class="uk-card-title uk-text-primary">Previsões</h3>
+                                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                    <div class="uk-width-auto">
+                                        <img class="uk-border-circle" width="50" height="50" src="../UiKit test/img/weatherIcons/17.svg">
+                                    </div>
+                                    <div class="uk-width-expand">
+                                        <h3 class="uk-card-title uk-margin-remove-bottom">Hoje</h3>
+                                        
+                                    </div>
+                                    <div class="uk-width-expand">
+                                        <h3 class="uk-card-title uk-margin-remove-bottom uk-text-danger">23.0 ºC</h3>
+                                        <p class="uk-text-meta uk-margin-remove-top uk-text-primary">15.3 ºC</p>
+                                    </div>
+                                </div>
+                                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                    <div class="uk-width-auto">
+                                        <img class="uk-border-circle" width="50" height="50" src="../UiKit test/img/weatherIcons/17.svg">
+                                    </div>
+                                    <div class="uk-width-expand">
+                                        <h3 class="uk-card-title uk-margin-remove-bottom">Amanhã</h3>
+                                        
+                                    </div>
+                                    <div class="uk-width-expand">
+                                        <h3 class="uk-card-title uk-margin-remove-bottom uk-text-danger">24.5 ºC</h3>
+                                        <p class="uk-text-meta uk-margin-remove-top uk-text-primary">14.9 ºC</p>
+                                    </div>
+                                </div>
+                                <div class="uk-grid-small uk-flex-middle" uk-grid>
+                                    <div class="uk-width-auto">
+                                        <img class="uk-border-circle" width="50" height="50" src="../UiKit test/img/weatherIcons/14.svg">
+                                    </div>
+                                    <div class="uk-width-expand">
+                                        <h3 class="uk-card-title uk-margin-remove-bottom">Domingo</h3>
+                                        
+                                    </div>
+                                    <div class="uk-width-expand">
+                                        <h3 class="uk-card-title uk-margin-remove-bottom uk-text-danger">24.3 ºC</h3>
+                                        <p class="uk-text-meta uk-margin-remove-top uk-text-primary">17.0 ºC</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-usage">Open</button>
+
+            <a href="#offcanvas-usage" uk-toggle>Open</a> -->
+
+            <div id="offcanvas-usage" uk-offcanvas>
+                <div class="uk-offcanvas-bar">
+
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                    
+                    <div class="uk-container">
+                        <img data-src="../UiKit test/img/logo.png" class="uk-align-center" width="100" height="100" alt="" uk-img>
+                    </div>
+                    
+                    <ul class="uk-nav-default uk-nav-parent-icon uk-margin-large-top" uk-nav>
+                        <li class="uk-nav-header">Main</li>
+                        <li class="uk-active"><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Show All</a></li>
+                        <li class="uk-parent">
+                            <a href="#"> <span class="uk-margin-small-right" uk-icon="icon: users"></span> Users</a>
+                            <ul class="uk-nav-sub">
+                                <li><a href="#">Bruno</a></li>
+                                <li><a href="#">Carlos</a></li>
+                            </ul>
+                        </li>
+                        <li class="uk-parent">
+                            <a href="#"> <span class="uk-margin-small-right" uk-icon="icon:  location"></span> Locations</a>
+                            <ul class="uk-nav-sub">
+                                <li><a href="#">Alcobaça</a></li>
+                                <li><a href="#">Dois Portos</a></li>
+                            </ul>
+                        </li>
+                        <li class="uk-parent">
+                            <a href="#"> <span class="uk-margin-small-right" uk-icon="icon:  rss"></span> Stations</a>
+                            <ul class="uk-nav-sub">
+                                <li><a href="#">Alcobaça</a></li>
+                                <li><a href="#">Dois Portos</a></li>
+                                <li><a href="#">Freiria</a></li>
+                                <li><a href="#">Maxial</a></li>
+                                <li><a href="#">Vale Vilao</a></li>
+                                <li><a href="#">Telheiro</a></li>
+                                <li><a href="#">Santarém</a></li>
+                                <li><a href="#">Barreira Alva</a></li>
+                                <li><a href="#">Adao Lobo</a></li>
+                                <li><a href="#">Painho</a></li>
+                                <li><a href="#">Sobrena</a></li>
+                                <li><a href="#">Vale Covo</a></li>
+                                <li><a href="#">Azambujeira dos Carros</a></li>
+                                <li><a href="#">A-dos-Ruivos</a></li>
+                            </ul>
+                        </li>
+                        
+                        
+                        <li class="uk-nav-header uk-margin-large-top">Account</li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: user"></span> Bruno Ferreira</a></li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Administrator</a></li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: info"></span> About</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> Sign-out</a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+        
+        
+        
+        
+       
+        
+        
+        
+    </body>
+    
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'bar',
+
+            // The data for our dataset
+            data: {
+                datasets: [{
+          label: 'Precipitação (mm)',
+          backgroundColor: 'rgb(62, 120, 178)',
+          borderColor: 'rgb(62, 120, 178)',
+          data: [4.8, 2, 1, 2]
+        }, {
+          label: 'Temperatura média (ºC)',
+          backgroundColor: 'rgba(255, 199, 0, 0.0)',
+          borderColor: 'rgb(255, 199, 0)',
+          data: [8.5, 9, 12, 14],
+
+          // Changes this dataset to become a line
+          type: 'line'
+        }],
+    labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril']
+            },
+
+            // Configuration options go here
+            options: {}
+        });
+    </script>
+</html>

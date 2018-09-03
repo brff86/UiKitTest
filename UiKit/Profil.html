@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PlugThings</title>
+       <meta charset="ISO-8859-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/uikit.min.css" />
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+    </head>
+    <body>
+        <div class="uk-offcanvas-content">
+
+            <!-- The whole page content goes here -->
+            
+            <!-- Navbar here -->
+            
+            <nav class="uk-light uk-background-primary uk-navbar  uk-margin" uk-navbar>
+                <div class="uk-navbar-left">
+                    <div>
+                        <a class="uk-navbar-item uk-logo" href="#"><img data-src="../UiKit test/img/plugthings_logo.png" width="120" alt="" uk-img></a>
+                        
+                    </div>
+                </div>
+                <div class="uk-navbar-right">
+                <div>
+                       <ul class="uk-navbar-nav">
+                            <li>
+                                <a href="#"><img data-src="../UiKit test/img/Flags/Portugal.png" width="35" alt="" uk-img></a>
+                                <div class="uk-navbar-dropdown">
+                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                        <li class="uk-active"><a href="#">Portugês</a></li>
+                                        <li><a href="#">Inglês</a></li>
+                                        <li><a href="#">Espanhol</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul> 
+                   </div>
+                    <div>
+                     
+                       <a class="uk-navbar-toggle uk-navbar-toggle-icon uk-icon" href="#offcanvas-usage" uk-navbar-toggle-icon="" aria-expanded="false" uk-toggle><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect y="9" width="20" height="2"></rect><rect y="3" width="20" height="2"></rect><rect y="15" width="20" height="2"></rect></svg></a>
+                                
+                    </div>
+               </div>
+            </nav>
+
+            <div class="uk-container">
+                <h2 class="uk-heading-line"><span class="uk-text-primary"><span class="uk-margin-small-right" uk-icon="icon: user; ratio: 1.8"></span> Prefil</span></h2>
+            </div>
+            <div class="uk-container uk-margin-top uk-margin-bottom">
+                <ul class="uk-child-width-expand" uk-tab>
+                    <li class="uk-active"><a href="#"><span class="uk-margin-small-right" uk-icon="info"></span> <span class="uk-visible@s">Informação</span></a></li>
+                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="location"></span> <span class="uk-visible@s">Localizações</span></a></li>
+                    <li><a href="#"><span class="uk-margin-small-right" uk-icon="bell"></span> <span class="uk-visible@s">Lembretes</span></a></li>
+                   
+                </ul>
+                
+                <ul class="uk-switcher uk-margin">
+                    <li>
+                        <div class="uk-card uk-card-default uk-card-body uk-width-1-1@m">
+                            <h3 class="uk-card-title">Informações</h3>
+                            <div uk-grid="" class="uk-grid">
+                                
+                                <div class="uk-width-1-3@m uk-grid-margin uk-first-column uk-width-expand"><div class="uk-panel "><img data-src="../UiKit test/img/profile.png" width="100%" alt="" uk-img><button class="uk-button uk-button-small uk-button-secondary uk-width-1-1">Alterar</button></div></div>
+                                <div class="uk-width-2-3@m uk-grid-margin">
+                                    <div class="uk-panel">
+                                        <form class="uk-grid-small" uk-grid>
+                                            
+                                            <div class="uk-width-1-2@s">
+                                                <label class="uk-form-label" for="form-stacked-text">Nome</label>
+                                                <input class="uk-input" type="text" placeholder="50" value="Bruno" disabled>
+                                            </div>
+                                            <div class="uk-width-1-2@s">
+                                                <label class="uk-form-label" for="form-stacked-text">Nome de Utilizador</label>
+                                                <input class="uk-input" type="text" placeholder="50" value="bruno" disabled>
+                                            </div>
+                                            <div class="uk-width-1-2@s">
+                                                <label class="uk-form-label" for="form-stacked-text">Nova Palavra-passe</label>
+                                                <input class="uk-input" type="text" disabled>
+                                            </div>
+                                            <div class="uk-width-1-2@s">
+                                                <label class="uk-form-label" for="form-stacked-text">Confirmar Palavra-passe</label>
+                                                <input class="uk-input" type="text" disabled>
+                                            </div>
+                                            <div class="uk-width-1-2@s">
+                                                <label class="uk-form-label" for="form-stacked-text">E-Mail</label>
+                                                <input class="uk-input" type="text" placeholder="50" value="admin@admin.com" disabled>
+                                            </div>
+                                            <div class="uk-width-1-2@s">
+                                                <label class="uk-form-label" for="form-stacked-text">Telemóvel</label>
+                                                <input class="uk-input" type="text" placeholder="50" value="91000000" disabled>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uk-container">
+                                 <a class="uk-button uk-button-default uk-float-right" href="#"><span class="uk-margin-small-right" uk-icon="pencil"></span> Editar</a>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                    </li>
+                    <li>
+                        <div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin-bottom">
+                            <h3 class="uk-card-title">Localizações</h3>
+                            <div class="uk-container">
+                                <a class="uk-button uk-button-primary uk-button-small uk-float-right uk-margin-bottom" href=""><span class="uk-margin-small-right" uk-icon="plus"></span> Adicionar</a>
+                            </div>
+                            <div class="uk-container">
+                                <div class="uk-overflow-auto">
+                                    <table class="uk-table uk-table-middle uk-table-divider">
+                                        <thead>
+                                            <tr class="uk-background-muted">
+                                                <th class="uk-width-small">Nome</th>
+                                                <th class="uk-width-small uk-text-center">Membros</th>
+                                                <th class="uk-width-small uk-text-center">Remover</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><a class="uk-link-muted" href="">Adão Lobo</a></td>
+                                                <td class="uk-text-center">2</td>
+                                                <td class="uk-text-center"><a href="" uk-icon="trash"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a class="uk-link-muted" href="">A-dos-Francos</a></td>
+                                                <td class="uk-text-center">1</td>
+                                                <td class="uk-text-center"><a href="" uk-icon="trash"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a class="uk-link-muted" href="">Alcobaça</a></td>
+                                                <td class="uk-text-center">3</td>
+                                                <td class="uk-text-center"><a href="" uk-icon="trash"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a class="uk-link-muted" href="">Barreira Alva</a></td>
+                                                <td class="uk-text-center">2</td>
+                                                <td class="uk-text-center"><a href="" uk-icon="trash"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a class="uk-link-muted" href="">Dois Portos</a></td>
+                                                <td class="uk-text-center">1</td>
+                                                <td class="uk-text-center"><a href="" uk-icon="trash"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a class="uk-link-muted" href="">Freiria</a></td>
+                                                <td class="uk-text-center">1</td>
+                                                <td class="uk-text-center"><a href="" uk-icon="trash"></a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a class="uk-link-muted" href="">Maxial</a></td>
+                                                <td class="uk-text-center">4</td>
+                                                <td class="uk-text-center"><a href="" uk-icon="trash"></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uk-card uk-card-default uk-card-body uk-width-1-1@m uk-margin-bottom">
+                            <h3 class="uk-card-title">Lembretes</h3>
+                            <div class="uk-container">
+                                <a class="uk-button uk-button-primary uk-button-small uk-float-right uk-margin-bottom" href=""><span class="uk-margin-small-right" uk-icon="plus"></span> Add</a>
+                            </div>
+                            <div class="uk-container">
+                                
+                            </div>
+                            
+                            
+                            
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            <!-- <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #offcanvas-usage">Open</button>
+
+            <a href="#offcanvas-usage" uk-toggle>Open</a> -->
+
+            <div id="offcanvas-usage" uk-offcanvas>
+                <div class="uk-offcanvas-bar">
+
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                    
+                    <div class="uk-container">
+                        <img data-src="../UiKit test/img/logo.png" class="uk-align-center" width="100" height="100" alt="" uk-img>
+                    </div>
+                    
+                    <ul class="uk-nav-default uk-nav-parent-icon uk-margin-large-top" uk-nav>
+                        <li class="uk-nav-header">Principal</li>
+                        <li><a href="Index.html"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Mostrar Tudo</a></li>
+                        <li class="uk-parent">
+                            <a href="#"> <span class="uk-margin-small-right" uk-icon="icon: users"></span> Utilizadores</a>
+                            <ul class="uk-nav-sub">
+                                <li><a href="#">Bruno</a></li>
+                                <li><a href="#">Carlos</a></li>
+                            </ul>
+                        </li>
+                        <li class="uk-parent">
+                            <a href="#"> <span class="uk-margin-small-right" uk-icon="icon:  location"></span> Localizações</a>
+                            <ul class="uk-nav-sub">
+                                <li><a href="#">Alcobaça</a></li>
+                                <li><a href="#">Dois Portos</a></li>
+                            </ul>
+                        </li>
+                        <li class="uk-parent">
+                            <a href="#"> <span class="uk-margin-small-right" uk-icon="icon:  rss"></span> Estações</a>
+                            <ul class="uk-nav-sub">
+                                <li><a href="#">Alcobaça</a></li>
+                                <li><a href="#">Dois Portos</a></li>
+                                <li><a href="#">Freiria</a></li>
+                                <li><a href="#">Maxial</a></li>
+                                <li><a href="#">Vale Vilao</a></li>
+                                <li><a href="#">Telheiro</a></li>
+                                <li><a href="#">Santarém</a></li>
+                                <li><a href="#">Barreira Alva</a></li>
+                                <li><a href="#">Adao Lobo</a></li>
+                                <li><a href="#">Painho</a></li>
+                                <li><a href="#">Sobrena</a></li>
+                                <li><a href="#">Vale Covo</a></li>
+                                <li><a href="#">Azambujeira dos Carros</a></li>
+                                <li><a href="#">A-dos-Ruivos</a></li>
+                            </ul>
+                        </li>
+                        
+                        
+                        <li class="uk-nav-header uk-margin-large-top">Conta</li>
+                        <li class="uk-active"><a href="Profil.html"><span class="uk-margin-small-right" uk-icon="icon: user"></span> Bruno Ferreira</a></li>
+                        <li><a href="Administration.html"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Administração</a></li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: info"></span> Sobre</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: sign-out"></span> Sair</a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+        
+    </body>
+</html>
